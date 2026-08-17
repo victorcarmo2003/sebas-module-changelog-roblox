@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "changelog-roblox",
+  "name": "Changelog do Roblox",
+  "description": "Monitora o RSS de changelog do Roblox, formata com IA e posta no Discord.",
+  "version": "1.0.0",
+  "sebasCompat": "^1.0.0",
+  "repoUrl": "https://github.com/victorcarmo2003/sebas-module-changelog-roblox",
+  "capabilities": ["controller", "cron", "discordCommands"],
+  "entryPoints": {
+    "controller": "dist/controller.js",
+    "chronos": "dist/cron.js",
+    "discordCommands": "dist/discord-commands.js"
+  },
+  "cron": { "schedule": "7,37 * * * *", "timeoutMs": 600000 },
+  "discordCommands": { "commands": ["setup", "teste"] },
+  "permissions": {
+    "network": { "domains": ["robloxapi.github.io", "create.roblox.com"] },
+    "storage": { "kind": "sql", "maxMb": 64 },
+    "discordPermissions": ["send-messages", "edit-interactions"]
+  },
+  "dependencies": { "aiProvider": "core" },
+  "resources": { "maxMemoryMb": 96 }
+}
