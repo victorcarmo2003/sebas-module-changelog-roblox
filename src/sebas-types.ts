@@ -38,6 +38,11 @@ export interface SebasModuleAiRequest {
   jsonSchemaName?: string;
   maxOutputTokens?: number;
   temperature?: number;
+  /** Prefixa o systemPrompt com a personalidade do Sebas (mordomo, honorificos, tom formal).
+   * So faz sentido pra texto livre voltado a pessoa — deixe de fora em extracao estruturada
+   * (json schema tecnico), onde sotaque de personagem so atrapalha. Por isso o formatter deste
+   * modulo (extracao tecnica) nao usa. */
+  usePersona?: boolean;
 }
 
 export interface SebasModuleAiResult {
